@@ -24,7 +24,7 @@ export default function CardList() {
   }, []);
 
   const filtredRobots = useMemo(() => {
-    if (robots?.length && searchText.length >= 3) {
+    if (robots.length && searchText.length >= 3) {
       return robots.filter((robot) =>
         robot.name.toUpperCase().includes(searchText.toUpperCase())
       );
@@ -36,7 +36,7 @@ export default function CardList() {
     <>
       <SearchBar value={searchText} onChange={setSearchText} />
       <div className="list-container">
-        {filtredRobots?.map((robot) => (
+        {filtredRobots.map((robot) => (
           <CardItem key={robot.id} robot={robot} />
         ))}
       </div>
